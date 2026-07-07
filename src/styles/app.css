@@ -534,6 +534,20 @@ body {
 
 .profile-menu-item .chevron { color: #BBBBBB; font-size: 14px; }
 
+/* ── Booking Form validation ── */
+.form-error {
+  color: #c0392b;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: -12px;
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"] {
+  border-color: #c0392b;
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
+}
+
 /* ── Booking Page ── */
 .booking-section {
   padding: 24px 20px 48px;

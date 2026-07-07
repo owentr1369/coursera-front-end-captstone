@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Little Lemon Restaurant Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Little Lemon](public/little-lemon-banner.png)
+
+## Overview
+
+This project is a website for a fictional restaurant called Little Lemon. It was created to practice the fundamental concepts in HTML and CSS such as using semantic elements, grids, flexboxes, animations, and responsive design. The Little Lemon website consists of four pages:
+
+- Homepage
+- Menu
+- Reservations
+- Contact Us
+
+---
+
+## Navigation Bar
+
+All webpages within the Little Lemon website have a responsive navigation bar. The navigation bar not only contains all the links to each webpage but also includes an animation on the Little Lemon title. When hovering over the Little Lemon text, the title glows and pulses yellow as seen in the gif above.
+
+---
+
+## Pages
+
+### Homepage
+
+The homepage has three main components, an image slider, a photo gallery and a set of action cards. The image slider uses an animation to automatically sequence through a series of images. The photo gallery uses a grid to showcase a set of foods and drinks. The action cards are links to the other remaining pages.
+
+### Menu
+
+The menu page has two main components, a photo gallery and the complete Little Lemon's menu. The photo gallery uses a wrapped flexbox to display images of menu options as well as their descriptions and prices side by side. Below the gallery is the complete menu that is laid out using a grid.
+
+### Reservations
+
+The reservation page is a simple webpage addressing customers to contact Little Lemon during operating hours to reserve a table.
+
+### Contact Us
+
+The contact us page is a simple webpage displaying Little Lemon's phone number, address, and hours of operations, as well as, a form (front-end only) to contact Little Lemon.
+
+---
+
+## Responsiveness
+
+To create a responsive website, media queries were incorporated to format the various webpages differently depending on the screen dimensions. Additionally, to create scalable text, all font-sizes utilized `rem` and scaled the font-size for the `html` element either up or down based on the screen dimensions.
+
+---
+
+## Getting Started
+
+Install dependencies and start the development server:
+
+```bash
+npm install
+npm start
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## Available Scripts
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| Script | Description |
+|--------|-------------|
+| `npm start` | Runs the app in development mode |
+| `npm test` | Launches the test runner |
+| `npm run build` | Builds the app for production |

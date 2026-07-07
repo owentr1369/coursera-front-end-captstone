@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+NP+Hmong&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+body {
+  font-family: 'Noto Serif NP Hmong', serif;
+  background-color: #fff;
+}
+
+/* ---- Navbar ---- */
+.ll-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ll-nav-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+#nav-bar-logo {
+  height: 6rem;
+  margin: 1rem;
+}
+
+.glow-container {
+  display: flex;
+}
+
+.glow {
+  font-size: 3rem;
+  display: inline;
+  color: #4c5c53;
+  margin: 0;
+}
+
+.glow-container:hover .glow {
+  color: #fff;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #dcbc1f, 0 0 40px #dcbc1f,
+      0 0 50px #dcbc1f;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #f3cb14, 0 0 40px #f3cb14, 0 0 50px #f3cb14,
+      0 0 60px #f3cb14;
+  }
+}
+
+.ll-nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.ll-nav-links a {
+  text-decoration: none;
+  color: #4c5c53;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.ll-nav-links a:hover,
+.ll-nav-links a.active {
+  color: #dcbc1f;
+}
+
+/* ---- Footer ---- */
+.ll-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+  margin-top: 2rem;
+}
+
+#footer-logo {
+  height: 4rem;
+  margin: 1rem;
+}
+
+.ll-footer span {
+  color: #4c5c53;
+  font-size: 1rem;
+}
+
+/* ---- Image Banner (Menu / Reservations / Contact pages) ---- */
+.image-banner-wrapper {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.image-banner-wrapper .image {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  filter: brightness(75%);
+}
+
+.image-banner-wrapper .image-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 5rem;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.image-banner-wrapper .image-subtitle {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  font-size: 1.75rem;
+  transform: translate(-50%, -30%);
+  color: white;
+}
+
+/* ---- Responsive ---- */
+@media only screen and (max-width: 600px) {
+  html { font-size: 40%; }
+  .ll-nav { margin: 0.5rem 1rem; }
+  .ll-nav-links { gap: 1rem; }
+}
+
+@media only screen and (min-width: 600px) {
+  html { font-size: 55%; }
+}
+
+@media only screen and (min-width: 768px) {
+  html { font-size: 70%; }
+}
+
+@media only screen and (min-width: 992px) {
+  html { font-size: 85%; }
+}

@@ -377,6 +377,13 @@ body {
 }
 .category-chip.active { background: var(--yellow); color: var(--text); }
 
+/* Reset list styles for card lists */
+.specials-list,
+.menu-items-list {
+  list-style: none;
+  padding-left: 0;
+}
+
 /* Mobile: same column list as specials */
 .menu-items-list {
   padding: 0 20px 20px;

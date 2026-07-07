@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
   faEnvelope,
@@ -7,19 +7,24 @@ import {
   faMapLocationDot,
   faChevronRight,
   faMessage,
-} from '@fortawesome/free-solid-svg-icons';
-import '../styles/app.css';
+} from "@fortawesome/free-solid-svg-icons";
+import "../styles/app.css";
 
 const menuLinks = [
-  { icon: faUser, label: 'My Account' },
-  { icon: faEnvelope, label: 'Email Preferences' },
-  { icon: faMapLocationDot, label: 'Saved Addresses' },
-  { icon: faPhone, label: 'Phone: 646-821-8442' },
-  { icon: faMessage, label: 'Send Us a Message' },
+  { icon: faUser, label: "My Account" },
+  { icon: faEnvelope, label: "Email Preferences" },
+  { icon: faMapLocationDot, label: "Saved Addresses" },
+  { icon: faPhone, label: "Phone: 646-821-8442" },
+  { icon: faMessage, label: "Send Us a Message" },
 ];
 
 const ProfilePage = () => {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
   const [showForm, setShowForm] = useState(false);
 
   const handleChange = (e) =>
@@ -27,49 +32,59 @@ const ProfilePage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Message submitted! We will get back to you soon.');
-    setForm({ name: '', email: '', phone: '', message: '' });
+    alert("Message submitted! We will get back to you soon.");
+    setForm({ name: "", email: "", phone: "", message: "" });
     setShowForm(false);
   };
 
   return (
-    <div>
+    <>
       {/* Profile Header */}
-      <div className="profile-header">
-        <div className="profile-avatar">
+      <section className="profile-header" aria-label="User profile">
+        <div className="profile-avatar" aria-hidden="true">
           <FontAwesomeIcon icon={faUser} />
         </div>
-        <span className="profile-name">Guest User</span>
-        <span className="profile-subtitle">Little Lemon Member</span>
-      </div>
+        <h1 className="profile-name">Guest User</h1>
+        <p className="profile-subtitle">Little Lemon Member</p>
+      </section>
 
-      {/* Menu Links */}
-      <ul className="profile-menu-list">
-        {menuLinks.map(({ icon, label }) => (
-          <li key={label}>
-            <button
-              className="profile-menu-item"
-              style={{ width: '100%', textAlign: 'left', background: 'var(--bg-light)' }}
-              onClick={() => label === 'Send Us a Message' && setShowForm(!showForm)}
-            >
-              <span className="item-left">
-                <span className="item-icon">
-                  <FontAwesomeIcon icon={icon} />
+      {/* Account Menu */}
+      <nav aria-label="Account options">
+        <ul className="profile-menu-list">
+          {menuLinks.map(({ icon, label }) => (
+            <li key={label}>
+              <button
+                className="profile-menu-item"
+                onClick={() =>
+                  label === "Send Us a Message" && setShowForm(!showForm)
+                }
+                aria-expanded={
+                  label === "Send Us a Message" ? showForm : undefined
+                }
+              >
+                <span className="item-left">
+                  <span className="item-icon" aria-hidden="true">
+                    <FontAwesomeIcon icon={icon} />
+                  </span>
+                  {label}
                 </span>
-                {label}
-              </span>
-              <FontAwesomeIcon icon={faChevronRight} className="chevron" />
-            </button>
-          </li>
-        ))}
-      </ul>
+                <FontAwesomeIcon
+                  icon={faChevronRight}
+                  className="chevron"
+                  aria-hidden="true"
+                />
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
       {/* Contact Form */}
       {showForm && (
-        <div className="contact-form-section">
-          <h3>Send Us a Message</h3>
+        <section className="contact-form-section" aria-label="Send a message">
+          <h2>Send Us a Message</h2>
           <p>We'll get back to you as soon as possible.</p>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} noValidate>
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input
@@ -80,6 +95,7 @@ const ProfilePage = () => {
                 value={form.name}
                 onChange={handleChange}
                 required
+                autoComplete="name"
               />
             </div>
             <div className="form-group">
@@ -92,6 +108,7 @@ const ProfilePage = () => {
                 value={form.email}
                 onChange={handleChange}
                 required
+                autoComplete="email"
               />
             </div>
             <div className="form-group">
@@ -103,6 +120,7 @@ const ProfilePage = () => {
                 placeholder="123-456-7890"
                 value={form.phone}
                 onChange={handleChange}
+                autoComplete="tel"
               />
             </div>
             <div className="form-group">
@@ -117,11 +135,13 @@ const ProfilePage = () => {
                 required
               />
             </div>
-            <button type="submit" className="submit-btn">SUBMIT</button>
+            <button type="submit" className="submit-btn">
+              Submit
+            </button>
           </form>
-        </div>
+        </section>
       )}
-    </div>
+    </>
   );
 };
 

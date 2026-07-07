@@ -12,14 +12,14 @@ function App() {
     <BrowserRouter>
       <div className="app-shell">
         <Navbar />
-        <div className="page-content">
+        <main className="page-content">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/menu" element={<MenuPage />} />
             <Route path="/reservations" element={<ReservationsPage />} />
             <Route path="/profile" element={<ProfilePage />} />
           </Routes>
-        </div>
+        </main>
         <BottomNav />
       </div>
     </BrowserRouter>

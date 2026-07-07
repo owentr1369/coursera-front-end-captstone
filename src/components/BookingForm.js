@@ -1,18 +1,24 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
+import { initializeTimes, updateTimes } from "../utils/bookingUtils";
 
 const BookingForm = ({ onSubmit }) => {
-  const [availableTimes] = useState([
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-  ]);
+  const [availableTimes, dispatch] = useReducer(
+    updateTimes,
+    null,
+    initializeTimes
+  );
 
   const [date, setDate] = useState("");
-  const [time, setTime] = useState("17:00");
+  const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("Birthday");
+
+  const handleDateChange = (e) => {
+    const newDate = e.target.value;
+    setDate(newDate);
+    setTime("");
+    dispatch({ type: "UPDATE_DATE", payload: { date: newDate } });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,7 +36,7 @@ const BookingForm = ({ onSubmit }) => {
         id="res-date"
         value={date}
         min={new Date().toISOString().split("T")[0]}
-        onChange={(e) => setDate(e.target.value)}
+        onChange={handleDateChange}
         required
       />
 

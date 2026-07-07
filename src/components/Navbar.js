@@ -28,7 +28,7 @@ const Navbar = () => (
     </NavLink>
 
     {/* Cart — visible on both mobile and desktop */}
-    <button className="cart-btn" aria-label="Cart">
+    <button className="cart-btn" aria-label="On Click">
       <FontAwesomeIcon icon={faShoppingBag} />
     </button>
 

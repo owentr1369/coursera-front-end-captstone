@@ -534,6 +534,25 @@ body {
 
 .profile-menu-item .chevron { color: #BBBBBB; font-size: 14px; }
 
+/* ── Booking Page ── */
+.booking-section {
+  padding: 24px 20px 48px;
+  background: #fff;
+}
+
+.booking-section h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.booking-section > p {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
 /* Contact Form */
 .contact-form-section { padding: 0 20px 24px; }
 .contact-form-section h3 { font-size: 18px; font-weight: 800; color: var(--text); margin-bottom: 4px; }

@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import BottomNav from "./components/BottomNav";
 import HomePage from "./pages/HomePage";
 import MenuPage from "./pages/MenuPage";
+import BookingPage from "./pages/BookingPage";
 import ReservationsPage from "./pages/ReservationsPage";
 import ProfilePage from "./pages/ProfilePage";
 import "./styles/app.css";
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/menu" element={<MenuPage />} />
+            <Route path="/booking" element={<BookingPage />} />
             <Route path="/reservations" element={<ReservationsPage />} />
             <Route path="/profile" element={<ProfilePage />} />
           </Routes>

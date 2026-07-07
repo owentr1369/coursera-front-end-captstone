@@ -1,11 +1,11 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import BottomNav from './components/BottomNav';
-import HomePage from './pages/HomePage';
-import MenuPage from './pages/MenuPage';
-import ReservationsPage from './pages/ReservationsPage';
-import ProfilePage from './pages/ProfilePage';
-import './styles/app.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import BottomNav from "./components/BottomNav";
+import HomePage from "./pages/HomePage";
+import MenuPage from "./pages/MenuPage";
+import ReservationsPage from "./pages/ReservationsPage";
+import ProfilePage from "./pages/ProfilePage";
+import "./styles/app.css";
 
 function App() {
   return (

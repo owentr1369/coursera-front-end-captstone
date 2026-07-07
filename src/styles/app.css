@@ -92,8 +92,12 @@ body {
   font-size: 18px;
 }
 
-/* Desktop nav links — hidden on mobile */
+/* Desktop nav links & logo — hidden on mobile */
 .desktop-nav-links {
+  display: none;
+}
+
+.top-nav-logo {
   display: none;
 }
 
@@ -220,7 +224,7 @@ body {
 .section-link:hover { text-decoration: underline; }
 
 /* ─────────────────────────────────────────
-   Specials Cards
+   Specials Cards — mobile: horizontal list
 ───────────────────────────────────────── */
 .specials-list {
   padding: 0 20px 20px;
@@ -231,29 +235,57 @@ body {
 
 .special-card {
   display: flex;
+  align-items: center;
+  gap: 0;
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--bg-light);
-  height: 110px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
 }
+.special-card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.1); }
 
 .special-card-img {
-  width: 120px;
+  width: 90px;
+  height: 90px;
   flex-shrink: 0;
   object-fit: cover;
+  border-radius: 12px;
+  margin: 10px;
 }
 
 .special-card-body {
-  padding: 14px 16px;
+  padding: 10px 14px 10px 4px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 4px;
+  flex: 1;
 }
 
-.special-card-name { font-size: 16px; font-weight: 700; color: var(--text); line-height: 1.3; }
-.special-card-price { font-size: 15px; font-weight: 500; color: var(--green); }
+.special-card-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.special-card-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.special-card-price {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 2px;
+}
 
 /* ─────────────────────────────────────────
    Bottom Nav (mobile only)
@@ -345,49 +377,13 @@ body {
 }
 .category-chip.active { background: var(--yellow); color: var(--text); }
 
+/* Mobile: same column list as specials */
 .menu-items-list {
   padding: 0 20px 20px;
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
-
-.menu-item-card {
-  display: flex;
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--bg-light);
-  height: 110px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  cursor: pointer;
-  transition: transform 0.15s, box-shadow 0.15s;
-}
-.menu-item-card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.1); }
-
-.menu-item-img { width: 120px; flex-shrink: 0; object-fit: cover; }
-
-.menu-item-body {
-  padding: 14px 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.menu-item-name { font-size: 15px; font-weight: 700; color: var(--text); line-height: 1.3; }
-
-.menu-item-desc {
-  font-size: 12px;
-  color: var(--text-muted);
-  line-height: 1.4;
-  flex: 1;
-  margin: 4px 0;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
-
-.menu-item-price { font-size: 15px; font-weight: 700; color: var(--green); }
 
 /* ─────────────────────────────────────────
    Reservations Page
@@ -612,7 +608,8 @@ body {
   }
 
   .top-nav-logo {
-    height: 48px;
+    display: block;
+    height: 40px;
     width: auto;
   }
 
@@ -690,31 +687,49 @@ body {
   .stat-value { font-size: 16px; }
 
   /* ── Specials ── */
-  .section-header { padding: 32px 48px 16px; }
+  .section-header { padding: 40px 48px 20px; }
   .section-title { font-size: 22px; }
   .section-link { font-size: 16px; }
 
   .specials-list {
-    padding: 0 48px 40px;
+    padding: 0 48px 48px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
   }
 
+  /* Desktop card: vertical (image on top, content below) */
   .special-card {
     flex-direction: column;
-    height: auto;
+    align-items: stretch;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--bg-light);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
   }
 
   .special-card-img {
     width: 100%;
     height: 200px;
+    border-radius: 0;
+    margin: 0;
     flex-shrink: unset;
+    object-fit: cover;
   }
 
-  .special-card-body { padding: 16px 20px 20px; gap: 8px; }
-  .special-card-name { font-size: 18px; }
-  .special-card-price { font-size: 17px; }
+  .special-card-body {
+    padding: 16px 18px 20px;
+    gap: 6px;
+  }
+
+  .special-card-name { font-size: 17px; }
+
+  .special-card-desc {
+    font-size: 13px;
+    -webkit-line-clamp: 3;
+  }
+
+  .special-card-price { font-size: 15px; font-weight: 700; }
 
   /* ── Menu Page ── */
   .menu-banner { height: 360px; }
@@ -726,23 +741,36 @@ body {
   }
   .category-chip { padding: 10px 24px; font-size: 15px; }
 
+  /* Desktop menu: 4-col grid, cards go vertical */
   .menu-items-list {
     padding: 0 48px 48px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
   }
 
-  .menu-item-card {
+  .menu-items-list .special-card {
     flex-direction: column;
-    height: auto;
+    align-items: stretch;
   }
 
-  .menu-item-img { width: 100%; height: 180px; flex-shrink: unset; }
-  .menu-item-body { padding: 14px 16px 16px; }
-  .menu-item-name { font-size: 16px; }
-  .menu-item-desc { font-size: 13px; -webkit-line-clamp: 3; }
-  .menu-item-price { font-size: 16px; margin-top: 8px; }
+  .menu-items-list .special-card-img {
+    width: 100%;
+    height: 190px;
+    border-radius: 0;
+    margin: 0;
+    flex-shrink: unset;
+    object-fit: cover;
+  }
+
+  .menu-items-list .special-card-body {
+    padding: 14px 16px 18px;
+    gap: 6px;
+  }
+
+  .menu-items-list .special-card-name { font-size: 16px; }
+  .menu-items-list .special-card-desc { font-size: 13px; -webkit-line-clamp: 3; }
+  .menu-items-list .special-card-price { font-size: 15px; font-weight: 700; }
 
   /* ── Reservations ── */
   .res-banner { height: 360px; }
@@ -789,14 +817,10 @@ body {
 @media (min-width: 1200px) {
   .top-nav { padding: 0 80px; }
 
-  .specials-list { padding: 0 80px 48px; }
-  .section-header { padding: 36px 80px 16px; }
+  .specials-list { padding: 0 80px 60px; }
+  .section-header { padding: 44px 80px 20px; }
 
-  .menu-items-list {
-    padding: 0 80px 60px;
-    grid-template-columns: repeat(4, 1fr);
-  }
-
+  .menu-items-list { padding: 0 80px 60px; }
   .categories-list { padding: 20px 80px; }
 
   .res-body { padding: 0 80px; max-width: 1100px; }

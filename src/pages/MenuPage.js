@@ -56,12 +56,12 @@ const MenuPage = () => {
       {/* Menu items */}
       <div className="menu-items-list">
         {filtered.map((item) => (
-          <div key={item.name} className="menu-item-card">
-            <img src={item.img} alt={item.name} className="menu-item-img" />
-            <div className="menu-item-body">
-              <span className="menu-item-name">{item.name}</span>
-              <span className="menu-item-desc">{item.desc}</span>
-              <span className="menu-item-price">{item.price}</span>
+          <div key={item.name} className="special-card">
+            <img src={item.img} alt={item.name} className="special-card-img" />
+            <div className="special-card-body">
+              <span className="special-card-name">{item.name}</span>
+              <span className="special-card-desc">{item.desc}</span>
+              <span className="special-card-price">{item.price}</span>
             </div>
           </div>
         ))}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 import '../styles/app.css';
 
 const navLinks = [
@@ -13,11 +13,6 @@ const navLinks = [
 
 const Navbar = () => (
   <header className="top-nav">
-    {/* Mobile: hamburger */}
-    <button className="top-nav-icon" aria-label="Menu">
-      <FontAwesomeIcon icon={faBars} />
-    </button>
-
     {/* Brand — shows logo image on desktop, text-only on mobile */}
     <NavLink to="/" className="top-nav-title" style={{ textDecoration: 'none' }}>
       <img
@@ -28,7 +23,7 @@ const Navbar = () => (
       Little Lemon
     </NavLink>
 
-    {/* Mobile: cart */}
+    {/* Cart — visible on both mobile and desktop */}
     <button className="cart-btn" aria-label="Cart">
       <FontAwesomeIcon icon={faShoppingBag} />
     </button>

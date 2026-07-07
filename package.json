@@ -50,5 +50,12 @@
   },
   "devDependencies": {
     "prettier": "^2.8.8"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^react-router/dom$": "<rootDir>/node_modules/react-router/dist/development/dom-export.js",
+      "^react-router/internal$": "<rootDir>/node_modules/react-router/dist/development/index.js",
+      "^react-router/internal/react-server-client$": "<rootDir>/node_modules/react-router/dist/development/index.js"
+    }
   }
 }
